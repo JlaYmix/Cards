@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: 400px;
+  height: 250px;
+  margin: 50px;
+  cursor: pointer;
+  transition: all 0.5s easy-out;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 1s;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  perspective: 600px;
+  overflow: hidden;
+}
+
+.card:nth-child(1n) .front-4 {
+  background: linear-gradient(#7aff9c, #00ff40);
+}
+
+.front-1 {
+  background: linear-gradient(to right, #ffc286, #ffb096, #ff7b7b, #ff6868);
+}
+
+.front-2 {
+  background: linear-gradient(to right, #5fd0ff, #005fff);
+}
+
+.front-3 {
+  background: linear-gradient(to right, #46ffd2, #00d29f);
+}
+
+.back-1 {
+  background: linear-gradient(to right, #ffc286, #ffb096, #ff7b7b, #ff6868);
+  transform: rotateY(180deg);
+}
+
+.back-2 {
+  background: linear-gradient(to right, #5fd0ff, #005fff);
+  transform: rotateY(180deg);
+}
+
+.back-3 {
+  background: linear-gradient(to right, #46ffd2, #00d29f);
+  transform: rotateY(180deg);
+}
+
+.back-4 {
+ background: linear-gradient(#7aff9c, #00ff40);
+ transform: rotateY(180deg);
+}
+
+.card:active .front {
+  transform: rotateY(180deg);
+}
+.card:active .back {
+  transform: rotateY(360deg);
+}
+
+.card-2:active .front-2 {
+  transform: rotateY(180deg);
+}
+.card-2:active .back-2 {
+  transform: rotateY(360deg);
+}
+
+.card-3:active .front-3 {
+  transform: rotateY(180deg);
+}
+.card-3:active .back-3 {
+  transform: rotateY(360deg);
+}
+
+.span {
+  display: block;
+  color: white;
+  padding: 10px;
+}
+
+.parent-span {
+  margin: 30px;
+}
+
+.fix {
+  margin-top: 20px;
+}
+
+.heading {
+  font-size: 18px;
+}
+
+.deposit {
+  font-size: 35px;
+}
+
+.front::before, .front::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -100;
+  transition: all 0.5s ease-out;
+}
+
+.front::before {
+  width: 200px;
+  height: 200px;
+  left: 265px;
+  bottom: 85px;
+}
+
+.front::after {
+  width: 250px;
+  height: 250px;
+  left: 180px;
+  top: 110px;
+}
+
+.front:hover::before {
+  bottom: 30%;
+}
+
+.front:hover::after {
+  top: 40%;
+}
+
+.img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  margin-right: 50px;
+  margin-top: 50px;
+  filter: invert(100%);
+  transition: all 0.5s ease-out;
+}
+
+.front:hover .img {
+  top: 5px;
+}
